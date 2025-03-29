@@ -20,8 +20,8 @@ targetDirectory=$1
 destinationDirectory=$2
 
 # [TASK 2]
-echo ""
-echo ""
+echo "The target directory is: $1"
+echo "The destination directory is: $2"
 
 # [TASK 3]
 currentTS=``
