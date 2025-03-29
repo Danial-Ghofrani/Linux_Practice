@@ -59,8 +59,8 @@ for file in *; do
   fi
 done
 
-# [TASK 12]
+tar -czvf "$backupFileName" "${toBackup[@]}"
 
-# [TASK 13]
+mv "$backupFileName" "$destDirAbsPath"
 
 
