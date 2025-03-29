@@ -44,20 +44,18 @@ cd "$destinationDirectory"
 destDirAbsPath=$(pwd)
 
 # [TASK 7]
-cd # <-
-cd # <-
+cd "$origAbsPath"
+cd "$targetDirectory" 
+
 
 # [TASK 8]
-yesterdayTS=
-
+yesterdayTS=$(($currentTS - 24 * 60 * 60))
 declare -a toBackup
 
-for file in  # [TASK 9]
-do
-  # [TASK 10]
-  if (())
-  then
-    # [TASK 11]
+for file in *; do
+  file_last_modified_date=$(date -r "$file" +%s)
+  if [[$file_last_modified_date -gt $yesterdayTS ]]; then
+    toBackup+=("$file")
   fi
 done
 
@@ -65,4 +63,4 @@ done
 
 # [TASK 13]
 
-# Congratulations! You completed the final project for this course!
+
