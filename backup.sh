@@ -24,10 +24,10 @@ echo "The target directory is: $1"
 echo "The destination directory is: $2"
 
 # [TASK 3]
-currentTS=``
+currentTS=$(date +%s)
 
 # [TASK 4]
-backupFileName=""
+backupFileName="backup-${currentTS}.tar.gz"
 
 # We're going to:
   # 1: Go into the target directory
