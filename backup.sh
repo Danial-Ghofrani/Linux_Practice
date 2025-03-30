@@ -37,7 +37,7 @@ backupFileName="backup-${currentTS}.tar.gz"
 # To make things easier, we will define some useful variables...
 
 # [TASK 5]
-origAbsPath= $(pwd)
+origAbsPath=$(pwd)
 
 # [TASK 6]
 cd "$destinationDirectory"
@@ -54,7 +54,7 @@ declare -a toBackup
 
 for file in *; do
   file_last_modified_date=$(date -r "$file" +%s)
-  if [[$file_last_modified_date -gt $yesterdayTS ]]; then
+  if [[ $file_last_modified_date -gt $yesterdayTS ]]; then
     toBackup+=("$file")
   fi
 done
